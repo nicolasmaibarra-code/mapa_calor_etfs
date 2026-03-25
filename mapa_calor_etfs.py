@@ -14,10 +14,23 @@ st.title("Mapa de Calor de Rendimientos")
 st.sidebar.header("Configuración")
 
 # Selección de tickers (puedes poner los que quieras por defecto)
+# Tickers que aparecerán marcados por defecto
 default_tickers = ['ICLN', 'TAN', 'QCLN', 'PBW', 'FAN', 'ACES', 'SPY']
+
+# Tickers sugeridos adicionales
+opciones_sugeridas = ['QQQ', 'DIA', 'ARKK', 'MELI']
+
+# Campo para ingresar tickers manualmente (ej: AAPL, MSFT)
+entrada_manual = st.sidebar.text_input("Agregar otros tickers (separados por coma)", "").upper()
+tickers_manuales = [t.strip() for t in entrada_manual.split(",") if t.strip()]
+
+# Combinar las listas y eliminar duplicados
+opciones_completas = sorted(list(set(default_tickers + opciones_sugeridas + tickers_manuales)))
+
+# El multiselect ahora incluye las opciones manuales ingresadas
 tickers = st.sidebar.multiselect(
     "Seleccioná los tickers", 
-    options=default_tickers + ['QQQ', 'DIA', 'ARKK', 'MELI'], # Agregá más opciones acá
+    options=opciones_completas, 
     default=default_tickers
 )
 
