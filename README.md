@@ -1,4 +1,4 @@
-<img width="1273" height="502" alt="image" src="https://github.com/user-attachments/assets/9a18143d-d08a-43f9-979b-8e2c407c765f" /># Monitor de Rendimientos de Mercado
+# Monitor de Rendimientos de Mercado
 
 Aplicación web interactiva desarrollada con **Streamlit** para visualizar y comparar el rendimiento porcentual de activos financieros (ETFs y acciones) en un período definido. Sin bases de datos externas, sin complejidad innecesaria.
 
